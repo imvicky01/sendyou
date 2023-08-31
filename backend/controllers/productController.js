@@ -20,7 +20,7 @@ exports.getProducts = catchAsyncError(async (req, res, next)=>{
     }
     
     const products = await buildQuery().paginate(resPerPage).query;
-
+    // return next (new ErrorHandler('Unable to send products !', 400))
     res.status(200).json({
         success : true,
         count: productsCount,
